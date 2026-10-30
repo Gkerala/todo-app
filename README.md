@@ -91,6 +91,6 @@ RLS 확인 내용 (`scripts/rls-check.js`):
 - **정상 작동 확인**: 배포 URL 뒤에 `/api/config`를 열어 `{"mode":"supabase","login":true}`가 나오는지 보고, 로그인 후 할 일 추가.
 
 ## 퀘스트 C-2 (에이전트 코드리뷰)
-이 Todo 앱은 퀘스트 C-2 코드 페어리뷰의 대상이기도 하다. 리뷰어가 **계정·`.env` 없이** 받아서 실행해 볼 수 있도록 **로컬(SQLite) 전용 폴더**를 별도 저장소에 두었다.
-- **리뷰어용 로컬 버전 저장소** (`Todo-로컬버전/` 폴더, `npm install` → `npm start`): [Gkerala/2-quest-agent-code-review](https://github.com/Gkerala/2-quest-agent-code-review)
+이 Todo 앱은 퀘스트 C-2 코드 페어리뷰의 대상이기도 하다. 리뷰어가 **계정·`.env` 없이** 받아서 실행해 볼 수 있도록 **로컬(SQLite) 전용 폴더**를 `aiffel-work` 저장소의 퀘스트 폴더에 따로 두었다. (퀘스트는 제출이 없어 별도 저장소를 만들지 않고 `aiffel-work`에 저장한다.)
+- **퀘스트 C-2 폴더** (리뷰어용 `Todo-로컬버전/`, 퀘스트 요약, 리뷰 양식 포함): [퀘스트C-2_에이전트코드리뷰](https://github.com/Gkerala/aiffel-work/tree/main/%EB%AA%A8%EB%93%88/02_%EB%B0%94%EC%9D%B4%EB%B8%8C%EC%BD%94%EB%94%A9%EC%9C%BC%EB%A1%9C%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B0%9C%EB%B0%9C%ED%95%98%EA%B8%B0/5%EC%9E%A5_%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%99%80%EB%B0%B0%ED%8F%AC/%ED%80%98%EC%8A%A4%ED%8A%B8/%ED%80%98%EC%8A%A4%ED%8A%B8C-2_%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8%EC%BD%94%EB%93%9C%EB%A6%AC%EB%B7%B0)
 - 로컬 버전의 코드는 이 저장소에서 **그대로 복사한 스냅샷**이다. 이 저장소의 코드를 고치면 그쪽도 같이 갱신한다.
