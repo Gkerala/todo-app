@@ -1,0 +1,5 @@
+.env
+todo.db
+todo.db-*
+node_modules/
+!.env.example

@@ -1,0 +1,21 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --env-file-if-exists=.env server.js sqlite",
+    "start:cloud": "node --env-file=.env server.js supabase",
+    "check:rls": "node --env-file=.env scripts/rls-check.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
+    "better-sqlite3": "^13.0.3",
+    "express": "^5.3.0"
+  }
+}
