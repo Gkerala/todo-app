@@ -92,5 +92,5 @@ RLS 확인 내용 (`scripts/rls-check.js`):
 
 ## 퀘스트 C-2 (에이전트 코드리뷰)
 이 Todo 앱은 퀘스트 C-2 코드 페어리뷰의 대상이기도 하다. 리뷰어가 **계정·`.env` 없이** 받아서 실행해 볼 수 있도록 **로컬(SQLite) 전용 폴더**를 별도 저장소에 두었다.
-- **리뷰어용 로컬 버전 저장소** (`Todo-로컬버전/` 폴더, `npm install` → `npm start`): [Gkerala/quest-c2-code-review](https://github.com/Gkerala/quest-c2-code-review)
+- **리뷰어용 로컬 버전 저장소** (`Todo-로컬버전/` 폴더, `npm install` → `npm start`): [Gkerala/2-quest-agent-code-review](https://github.com/Gkerala/2-quest-agent-code-review)
 - 로컬 버전의 코드는 이 저장소에서 **그대로 복사한 스냅샷**이다. 이 저장소의 코드를 고치면 그쪽도 같이 갱신한다.
