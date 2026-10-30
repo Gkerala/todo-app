@@ -95,6 +95,6 @@ Render에 이 저장소(`Gkerala/todo-app`, 브랜치 `main`)를 연결해 배�
 2. 이 앱이 `aiffel-work` 저장소 안의 한글 이름 폴더에 있을 때는 Render의 Root Directory 칸이 영문·숫자·`-`·`_`·`.`·`/`·공백만 받아서(한글 경로 거부), 칸을 비우고 명령어에서 `cd <폴더> && ...`로 이동했다. 2026-10-30에 앱을 독립 저장소로 옮긴 뒤에는 폴더 이동이 필요 없어져 위의 단순한 설정으로 바꿨다.
 
 ## 퀘스트 C-2 (에이전트 코드리뷰)
-이 Todo 앱은 퀘스트 C-2 코드 페어리뷰의 대상이기도 하다. 리뷰어가 **계정·`.env` 없이** 받아서 실행해 볼 수 있도록 **로컬(SQLite) 전용 폴더**를 `aiffel-work` 저장소의 퀘스트 폴더에 따로 두었다. (퀘스트는 제출이 없어 별도 저장소를 만들지 않고 `aiffel-work`에 저장한다.)
-- **퀘스트 C-2 폴더** (리뷰어용 `Todo-로컬버전/`, 퀘스트 요약, 리뷰 양식 포함): [퀘스트C-2_에이전트코드리뷰](https://github.com/Gkerala/aiffel-work/tree/main/%EB%AA%A8%EB%93%88/02_%EB%B0%94%EC%9D%B4%EB%B8%8C%EC%BD%94%EB%94%A9%EC%9C%BC%EB%A1%9C%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B0%9C%EB%B0%9C%ED%95%98%EA%B8%B0/5%EC%9E%A5_%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%99%80%EB%B0%B0%ED%8F%AC/%ED%80%98%EC%8A%A4%ED%8A%B8/%ED%80%98%EC%8A%A4%ED%8A%B8C-2_%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8%EC%BD%94%EB%93%9C%EB%A6%AC%EB%B7%B0)
+이 Todo 앱은 퀘스트 C-2 코드 페어리뷰의 대상이기도 하다. 리뷰어가 **계정·`.env` 없이** 받아서 실행해 볼 수 있도록 **로컬(SQLite) 전용 폴더**를 퀘스트 저장소에 따로 두었다.
+- **퀘스트 C-2 저장소** (리뷰어용 `Todo-로컬버전/` 폴더, 퀘스트 요약, 리뷰 양식 포함): [Gkerala/2-quest-agent-code-review](https://github.com/Gkerala/2-quest-agent-code-review)
 - 로컬 버전의 코드는 이 저장소에서 **그대로 복사한 스냅샷**이다. 이 저장소의 코드를 고치면 그쪽도 같이 갱신한다.
