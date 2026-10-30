@@ -77,18 +77,22 @@ RLS 확인 내용 (`scripts/rls-check.js`):
 **완료 체크**와 **Supabase 모드에서 서버를 껐다 켠 뒤 유지**는 영상에 없고, 위 "확인 기록" 표와 `npm run check:rls` 결과(12/12)에 직접 확인한 결과로 적었다.
 
 ## Render 배포 (실제 배포함: https://aiffel-work.onrender.com/)
-아래 설정으로 배포했다. 처음에는 Start Command를 비워 둬서 `node index.js`로 실행되어 실패했다가 `node server.js supabase`로 고쳐 성공했다. 폴더를 정리해 경로에 한글이 들어간 뒤에는 Root Directory 칸이 영문·숫자·`-`·`_`·`.`·`/`·공백만 받아서(한글 경로 거부), **Root Directory는 비우고 명령어에서 폴더로 이동**하는 방식으로 바꿔 성공했다.
-- **코드 보관 위치**: GitHub 저장소. 이 앱이 저장소의 하위 폴더(`모듈/02_바이브코딩으로웹서비스개발하기/4장_백엔드와데이터베이스/과제/백엔드와데이터베이스_todo-app`)라서, 아래 명령어가 그 폴더로 이동한다.
-- **Root Directory**: 비움 (한글 경로는 이 칸에 넣을 수 없음)
-- **Build command**: `cd 모듈/02_바이브코딩으로웹서비스개발하기/4장_백엔드와데이터베이스/과제/백엔드와데이터베이스_todo-app && npm install`
-- **Start command**: `cd 모듈/02_바이브코딩으로웹서비스개발하기/4장_백엔드와데이터베이스/과제/백엔드와데이터베이스_todo-app && node server.js supabase`  
+Render에 이 저장소(`Gkerala/todo-app`, 브랜치 `main`)를 연결해 배포했다. 앱이 저장소 맨 위에 있어서 설정이 단순하다. (서비스 이름이 `aiffel-work`라서 접속 주소에도 그 이름이 들어 있다.)
+- **Root Directory**: 비움
+- **Build command**: `npm install`
+- **Start command**: `node server.js supabase`
   (`npm run start:cloud`는 `.env` 파일을 읽도록 되어 있어서, 파일이 없는 Render에서는 쓰지 않는다.)
-- **환경변수**(Render 대시보드에 입력): `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`.  
+- **환경변수**(Render 대시보드에 입력): `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`.
   `SUPABASE_DB_PASSWORD`, `TEST_*`는 넣지 않는다. 앱 코드가 쓰지 않는다.
 - **PORT**: Render가 지정해 주며 서버가 `process.env.PORT`를 읽는다.
 - **Node 버전**: 지정하지 않았다. Render 기본 버전(공식 문서 기준 24.x)이 로컬(v24)과 같은 계열이다.
+- **자동 배포**: `main`에 푸시하면 Render가 새로 배포한다(Events의 "Branch updated").
 - **주의**: 무료 서버는 15분간 요청이 없으면 잠들고, 깨어나는 데 약 1분이 걸린다(Render 공식 문서). Supabase 무료 프로젝트도 1주 미사용 시 일시정지될 수 있다.
 - **정상 작동 확인**: 배포 URL 뒤에 `/api/config`를 열어 `{"mode":"supabase","login":true}`가 나오는지 보고, 로그인 후 할 일 추가.
+
+**배포하며 겪은 문제**
+1. Start Command를 비워 두면 Render가 `node index.js`로 실행한다. 이 앱에는 `index.js`가 없어 `Cannot find module`로 실패했다. → `node server.js supabase`로 지정.
+2. 이 앱이 `aiffel-work` 저장소 안의 한글 이름 폴더에 있을 때는 Render의 Root Directory 칸이 영문·숫자·`-`·`_`·`.`·`/`·공백만 받아서(한글 경로 거부), 칸을 비우고 명령어에서 `cd <폴더> && ...`로 이동했다. 2026-10-30에 앱을 독립 저장소로 옮긴 뒤에는 폴더 이동이 필요 없어져 위의 단순한 설정으로 바꿨다.
 
 ## 퀘스트 C-2 (에이전트 코드리뷰)
 이 Todo 앱은 퀘스트 C-2 코드 페어리뷰의 대상이기도 하다. 리뷰어가 **계정·`.env` 없이** 받아서 실행해 볼 수 있도록 **로컬(SQLite) 전용 폴더**를 `aiffel-work` 저장소의 퀘스트 폴더에 따로 두었다. (퀘스트는 제출이 없어 별도 저장소를 만들지 않고 `aiffel-work`에 저장한다.)
